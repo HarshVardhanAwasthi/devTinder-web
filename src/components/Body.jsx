@@ -13,10 +13,7 @@ const Body=()=>{
 
     const fetchUser=async ()=>{
         try{
-            const res=await axios.get("http://localhost:7000/profile",
-            {
-                withCredentials:true
-            });
+            const res=await axios.get("http://localhost:7000/profile",{withCredentials:true});
             dispatch(addUsers(res.data));
         }
         catch(error){
