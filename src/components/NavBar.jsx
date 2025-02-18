@@ -23,7 +23,9 @@ const NavBar=()=>{
     return(
       <div className="navbar bg-base-300">
       <div className="flex-1">
-        <Link to="/" className="btn btn-ghost text-xl">DevTinder</Link>
+        <Link to="/" className="btn btn-ghost text-xl"><img className="w-10 rounded-full"
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmY2iYQZouGBDROI4gVZL_FZL4kideIsTmzQ&s" 
+      alt="logo" />DevTinder</Link>
       </div>
       {user&&(
       <div className="flex-none gap-2 mx-2">
@@ -33,7 +35,7 @@ const NavBar=()=>{
             <div className="w-10 rounded-full">
               <img
                 alt="User Photo"
-                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                src={user.photoUrl}/>
             </div>
           </div>
           <ul
@@ -45,7 +47,7 @@ const NavBar=()=>{
                 <span className="badge">New</span>
               </Link>
             </li>
-            <li><a>Settings</a></li>
+            <li><Link to="/connections">Connections</Link></li>
             <li><a onClick={handleLogout}>Logout</a></li>
           </ul>
         </div>

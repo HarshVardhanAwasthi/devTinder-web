@@ -27,7 +27,7 @@ const Feed = () => {
   
   return (
     (feed &&
-    <div>
+    <div className="my-2">
         <UserCard user={feed[0]}/>
     </div>
   ));
