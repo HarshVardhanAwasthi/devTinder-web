@@ -30,7 +30,7 @@ const Body=()=>{
     }, []);
 
     return(
-        <div>
+        <div className="w-full h-screen overflow-x-auto">
             <NavBar/>
             <Outlet/>
             <Footer/>
