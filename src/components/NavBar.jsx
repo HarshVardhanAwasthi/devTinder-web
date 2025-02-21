@@ -34,7 +34,7 @@ const NavBar = () => {
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmY2iYQZouGBDROI4gVZL_FZL4kideIsTmzQ&s"
             alt="logo"
           />
-          DevTinder
+          DevSphere
         </Link>
       </div>
       {user && (
