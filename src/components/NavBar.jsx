@@ -5,6 +5,7 @@ import { removeUser } from "../utils/slice";
 import axios from "axios";
 import { removeConnection } from "../utils/ConnectionSlice";
 import {logOut}  from "../utils/feedSlice"
+import { BASE_URL } from "../utils/constants";
 
 const NavBar = () => {
   const dispatch = useDispatch();
@@ -13,7 +14,7 @@ const NavBar = () => {
 
   const handleLogout = async () => {
     try {
-      await axios.post("http://localhost:7000/logout", {
+      await axios.post(BASE_URL+"/logout", {
         withCredentials: true,
       });
       dispatch(removeUser());

@@ -2,6 +2,7 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { addRequest, removeRequests } from "../utils/requestSlice";
 import { useEffect, useState } from "react";
+import { BASE_URL } from "../utils/constants";
 
 const Requests = () => {
   const requests = useSelector((store) => store.requests);
@@ -9,7 +10,7 @@ const Requests = () => {
   const getRequests = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:7000/user/requests/received",
+        BASE_URL+"/user/requests/received",
         { withCredentials: true }
       );
       console.log(res);
@@ -23,7 +24,7 @@ const Requests = () => {
   const handleRequest = async (status, _id) => {
     try {
       const res = axios.post(
-        "http://localhost:7000/request/review/" + status + "/" + _id,
+        BASE_URL+"/request/review/" + status + "/" + _id,
         {},
         { withCredentials: true }
       );

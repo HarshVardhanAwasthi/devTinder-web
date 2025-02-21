@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { addUsers } from "../utils/slice";
 import { useNavigate } from "react-router-dom";
 import UserCard from "./UserCard";
+import { BASE_URL } from "../utils/constants";
 const EditProfile = ({ user }) => {
   const [firstName, setfirstName] = useState(user.firstName);
   const [lastName, setlastName] = useState(user.lastName);
@@ -18,7 +19,7 @@ const EditProfile = ({ user }) => {
   const SetProfile = async () => {
     try {
       const res = await axios.patch(
-        "http://localhost:7000/edit",
+        BASE_URL+"/edit",
         {
           firstName,
           lastName,

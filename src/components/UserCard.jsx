@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios"
 import {removeFeed} from "../utils/feedSlice";
+import { BASE_URL } from "../utils/constants";
 const UserCard = ({ user }) => {
   if (!user || Object.keys(user).length === 0) {
     return <h1>No User Data Available</h1>;
@@ -13,7 +14,7 @@ const UserCard = ({ user }) => {
     
     try {
       const res = await axios.post(
-        "http://localhost:7000/request/send/" + status + "/" + _id,
+        BASE_URL+"/request/send/" + status + "/" + _id,
         {},
         { withCredentials: true }
       );

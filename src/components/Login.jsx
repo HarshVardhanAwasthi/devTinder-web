@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { addUsers } from "../utils/slice";
 import { useNavigate } from "react-router-dom";
 import { Eye, EyeOff } from "lucide-react";
+import { BASE_URL } from "../utils/constants";
 const Login = () => {
   const [firstName, setfirstName] = useState("");
   const [lastName, setlastName] = useState("");
@@ -20,7 +21,7 @@ const Login = () => {
   const handleSignUp = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:7000/signup",
+        BASE_URL+"/signup",
         {
           firstName,
           lastName,
@@ -43,7 +44,7 @@ const Login = () => {
   const handleLogin = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:7000/login",
+        BASE_URL+"/login",
         {
           emailId,
           password,

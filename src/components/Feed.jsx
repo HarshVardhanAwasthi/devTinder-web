@@ -4,6 +4,7 @@ import { addFeed } from "../utils/feedSlice";
 import { useEffect } from "react";
 import axios from "axios";
 import UserCard from "./UserCard";
+import { BASE_URL } from "../utils/constants";
 const Feed = () => {
   const feed = useSelector((store) => store.feed);
   // console.log(feed);
@@ -13,7 +14,7 @@ const Feed = () => {
       if (feed) {
         return;
       }
-      const res = await axios.get("http://localhost:7000/user/feed", {
+      const res = await axios.get(BASE_URL+"/user/feed", {
         withCredentials: true,
       });
       dispatch(addFeed(res?.data?.data));
